@@ -7,14 +7,13 @@ title_separator          : "-"
 subtitle                 : "PhD Student at NUS"
 name                     : "Shuyang Wu"
 description              : "Academic homepage of Shuyang Wu. Trying to build the world with Tech!"
-url                      : "https://ShuyangWu-AI4S.github.io" 
+url                      : "https://shuyangwu-ai4s.github.io"
 baseurl                  : ""
 repository               : "ShuyangWu-AI4S/ShuyangWu-AI4S.github.io"
 
 # =========================================================================
-# 远程主题定义 (Theme Settings)
+# 远程主题定义 (Theme Settings) - 严格依赖远程插件，已移除本地 theme 声明
 # =========================================================================
-theme                    : "minimal-mistakes-jekyll"
 remote_theme             : "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin    : "contrast" 
 
@@ -24,7 +23,7 @@ minimal_mistakes_skin    : "contrast"
 author:
   name             : "Shuyang Wu"
   avatar           : "/assets/images/avatar.jpg" 
-  bio              : "PhD Student at National University of Singapore. Research interests: AI for Science (AI4S), Physics-Informed Operator Learning, Spatiotemporal Representative Learning, Inverse Problems & Digital Twin, Distributed Optical Fiber Sensing(DOFS) ."
+  bio              : "PhD Student at National University of Singapore. Research interests: AI for Science (AI4S) | Physics-Informed Operator Learning | Distributed Acoustic Sensing (DAS)."
   location         : "Singapore"
   links:
     - label: "Email"
