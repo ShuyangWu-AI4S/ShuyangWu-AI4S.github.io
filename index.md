@@ -9,7 +9,7 @@ classes: wide  # 拓宽右侧内容区，让字不再挤在一起
 ## About Me
 
 I am currently a first-year Ph.D. student at the National University of Singapore (NUS), advised by prof. Wenming Yang. I received my Bachelor's degree in Mechanical Engineering from Shanghai Jiaotong University.
-My research interests lie at the intersection of **AI for Science (AI4S)**, **Physics-Informed Operator Learning**, **Inverse Problems on Fluid Dynamics & Digital Twin**, **Distributed Optical Fiber Sensing (DOFS)**. 
+My research interests lie at the intersection of **AI for Science (AI4S)**, **Physics-Informed Operator Learning**, **Inverse Problems in Fluid Dynamics & Digital Twin**, **Distributed Optical Fiber Sensing (DOFS)**. 
 
 
 
