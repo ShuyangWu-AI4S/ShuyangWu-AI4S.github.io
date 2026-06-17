@@ -1,0 +1,41 @@
+---
+# Minimal Mistakes 规定：顶部必须保留这两行三连横线，Jekyll 才会编译此 CSS 文件
+---
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // 加载皮肤
+@import "minimal-mistakes"; // 加载主题核心样式
+
+/* =========================================================================
+   1. 克隆现代学术字体 Stack（消除发虚、过粗的异形字体）
+   ========================================================================= */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================================
+   2. 彻底抹去头像半透明度（强行保持 100% 常态不透明度）
+   ========================================================================= */
+.author__avatar {
+  opacity: 1 !important;
+}
+.author__avatar img {
+  opacity: 1 !important;
+  filter: none !important; /* 防止某些皮肤自带的灰度或暗化滤镜 */
+}
+
+/* =========================================================================
+   3. 放大左上角 NUS 学校 Logo 尺寸
+   ========================================================================= */
+.masthead__logo img {
+  max-height: 52px !important; /* 默认通常只有 35px 左右，放大到 52px 更加舒展大气 */
+  width: auto !important;
+}
+
+/* =========================================================================
+   4. 刚性锁死全局字号（降维打击全屏字体变大的玄学 Bug）
+   ========================================================================= */
+html {
+  font-size: 15.5px !important; /* ⚡ 关键行：锁死根字号 */
+}
