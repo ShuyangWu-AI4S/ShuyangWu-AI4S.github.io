@@ -6,7 +6,7 @@ author_profile: true
 classes: wide  # 拓宽右侧内容区，让字不再挤在一起
 ---
 
-## About Me {: #about-me}
+## About Me
 
 I am currently a first-year Ph.D. student at the National University of Singapore (NUS), advised by prof. Wenming Yang. I received my Bachelor's degree in Mechanical Engineering from Shanghai Jiaotong University.
 My research interests lie at the intersection of **AI for Science (AI4S)**, **Physics-Informed Operator Learning**, **Inverse Problems on Fluid Dynamics & Digital Twin**, **Distributed Optical Fiber Sensing (DOFS)**. 
@@ -15,7 +15,7 @@ My research interests lie at the intersection of **AI for Science (AI4S)**, **Ph
 
 ---
 
-## Research Directions {: #research-directions}
+## Research Directions
 
 ### 1. Physics-Informed Machine Learning & Operator Learning
 This research direction focuses on deeply analyzing the convergence mechanisms of Physics-Informed Neural Networks (PINNs) and Neural Operators (e.g., FNO, PINO) in continuous spaces. It aims to reconstruct automatic differentiation gradient flows and introduce spatiotemporal causality weights to resolve the long-standing challenges of gradient stiffness imbalances and numerical distortions in solving inverse problems for highly non-linear partial differential equations (PDFs).
