@@ -2,11 +2,10 @@
 # Site Settings
 # =========================================================================
 locale                   : "en-US"
-title                    : "Shuyang Wu"
+title                    : "National University of Singapore"
 title_separator          : "-"
-subtitle                 : "PhD Student at NUS"
 name                     : "Shuyang Wu"
-description              : "Academic homepage of Shuyang Wu. Trying to build the world with Tech!"
+description              : "Academic homepage of Shuyang Wu."
 url                      : "https://shuyangwu-ai4s.github.io"
 baseurl                  : ""
 repository               : "ShuyangWu-AI4S/ShuyangWu-AI4S.github.io"
@@ -23,7 +22,7 @@ minimal_mistakes_skin    : "contrast"
 author:
   name             : "Shuyang Wu"
   avatar           : "/assets/images/avatar.jpg" 
-  bio              : "PhD Student at National University of Singapore. Research interests: AI for Science (AI4S) | Physics-Informed Operator Learning | Distributed Acoustic Sensing (DAS)."
+  bio              : "PhD Student at National University of Singapore."
   location         : "Singapore"
   links:
     - label: "Email"
