@@ -1,6 +1,7 @@
 ---
 layout: single
 permalink: /
+title: "Overview"
 author_profile: true
 classes: wide  # 拓宽右侧内容区，让字不再挤在一起
 ---
