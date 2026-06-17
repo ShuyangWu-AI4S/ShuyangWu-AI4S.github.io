@@ -1,81 +1,97 @@
+<!-- 1. 远程引入高级学术曲线字体 -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap">
 
 <style>
   /* =========================================================================
-     2. 精准字体策略：只覆盖文本和标题，绝不加 !important，把图标生存空间还给 FontAwesome
+     2. 现代几何锁：彻底降维打击头像变椭圆、变竖长
+     ========================================================================= */
+  .author__avatar {
+    width: 100% !important;          /* 顺应被压缩的侧边栏，宽度自动拉满 */
+    max-width: 140px !important;     /* 限制最大绝对尺寸，防止在超大屏上突变巨婴 */
+    aspect-ratio: 1 / 1 !important;  /* ⚡ 刚性核心：强制宽高比永远维持 1:1 正方形 */
+    border-radius: 50% !important;   /* 配合 1:1 永远锁定完美正圆形 */
+    overflow: hidden !important;
+    margin-left: auto !important;    /* 居中放置 */
+    margin-right: auto !important;
+  }
+  
+  .author__avatar img, .author__avatar a, .author__avatar a img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;    /* 确保图片在圆形里完美裁剪，绝不拉伸 */
+    border-radius: 50% !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  /* =========================================================================
+     3. 连根拔起虚化传染源（封杀父级容器、超链接的一切常态透明度与动画）
+     ========================================================================= */
+  .author__avatar, 
+  .author__avatar a, 
+  .author__avatar img,
+  .author__avatar:hover,
+  .author__avatar a:hover img,
+  .sidebar .author__avatar img {
+    opacity: 1 !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    transition: none !important;     /* 彻底拔掉悬停时变亮变暗的闪烁特效 */
+  }
+
+  /* =========================================================================
+     4. 顶栏框架扩容：把限制 NUS Logo 的上层框架彻底撑开
+     ========================================================================= */
+  .masthead {
+    padding: 1.5em 0 !important;     /* ⚡ 刚性核心：大幅增加顶栏的上下内边距，给大Logo提供物理生存空间 */
+    border-bottom: 1px solid #f2f3f3 !important;
+  }
+  
+  .masthead__inner-wrap {
+    padding: 0 !important;           /* 清除内部束缚 */
+  }
+
+  .masthead__logo {
+    display: flex !important;
+    align-items: center !important;  /* 确保 Logo 垂直居中 */
+  }
+
+  .masthead__logo img {
+    height: 52px !important;         /* 强制直接给足 52px 的实体高度，不再使用软绵绵的 max-height */
+    max-height: none !important;     /* 撕掉主题自带的高度上限封条 */
+    width: auto !important;          /* 宽度横向等比例自然舒展 */
+  }
+
+  /* =========================================================================
+     5. 精准学术排版与封杀右侧小方块
      ========================================================================= */
   body, p, h1, h2, h3, h4, h5, h6, li, a, span {
     font-family: "Open Sans", "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   }
 
-  /* =========================================================================
-     3. 彻底封杀标题右侧的奇怪跳转小方块（Header Anchor Links）
-     ========================================================================= */
   .header-link, .header-link i {
-    display: none !important;
+    display: none !important;        /* 完美干掉标题右侧的奇怪跳转小方块 */
   }
 
-  /* =========================================================================
-     4. 头像暴力放大 + 彻底去虚化锁死
-     ========================================================================= */
-  .author__avatar {
-    width: 165px !important;       /* ⚡ 从默认的窄小尺寸暴力放大到 165px，更显大气 */
-    height: 165px !important;
-    max-width: 100% !important;
-    opacity: 1 !important;
-    margin-left: auto !important;  /* 居中对齐 */
-    margin-right: auto !important;
-  }
-  .author__avatar img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;  /* 防止放大后头像拉伸变形 */
-    opacity: 1 !important;
-    filter: none !important;
-    -webkit-filter: none !important;
-    transition: none !important;   /* 拔掉悬停闪烁动画 */
-  }
-
-  /* =========================================================================
-     5. 正文精细学术排版（深炭灰、拉开行距、注入呼吸感）
-     ========================================================================= */
   .page__content p, .page__content li {
-    line-height: 1.8 !important;    /* 舒展行高，字不再挤 */
+    line-height: 1.8 !important;
     font-size: 15.5px !important;
-    color: #2c2c2c !important;     /* 优雅深炭灰，告别死黑 */
+    color: #2c2c2c !important;       /* 高级深炭灰 */
     letter-spacing: 0.01em !important;
   }
 
   .page__content h1, .page__content h2, .page__content h3, .page__content h4 {
     color: #111111 !important;
-    font-weight: 600 !important;   /* 采用 600 半粗体，圆润修长 */
+    font-weight: 600 !important;     /* 采用高雅的 600 半粗体 */
     margin-top: 1.8em !important;
     margin-bottom: 0.6em !important;
   }
 
-  /* 在正文大标题（如 About Me / Research Directions）下方画一条优雅的淡灰学术分割线 */
   .page__content h2 {
-    border-bottom: 1px solid #e1e4e8 !important;
+    border-bottom: 1px solid #e1e4e8 !important; /* 优雅的学术下划线 */
     padding-bottom: 0.3em !important;
   }
 
-  /* =========================================================================
-     6. 拯救横向长条状 NUS Logo，使其自然放大、不再缩成一团
-     ========================================================================= */
-  .masthead__logo img {
-    max-height: 65px !important;   /* 高度松绑到 65px，横向长 Logo 会等比例舒展变大 */
-    height: auto !important;
-    width: auto !important;
-  }
-  .masthead__logo {
-    padding-top: 6px !important;    /* 微调顶栏上下边距，防止大 Logo 顶格 */
-    padding-bottom: 6px !important;
-  }
-
-  /* =========================================================================
-     7. 锁死全局根字号防线（降维打击全屏时字号无限膨胀的 Bug）
-     ========================================================================= */
   html {
-    font-size: 16px !important;     /* 焊死根字号，大屏下不膨胀，小屏下不缩水 */
+    font-size: 16px !important;       /* 焊死全局根字号 */
   }
 </style>
