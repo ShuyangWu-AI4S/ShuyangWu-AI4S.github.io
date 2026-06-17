@@ -1,9 +1,11 @@
 main:
-  - title: "Home"
+  - title: "Homepage"
     url: /
-  - title: "Research"
-    url: /research/
-  - title: "Publications"
-    url: /publications/
-  - title: "CV"
-    url: /cv/
+  - title: "About me"
+    url: /#about-me
+  - title: "Research Directions"
+    url: /#research-directions/
+  # - title: "Publications"
+  #   url: #/publications/
+  # - title: "CV"
+  #   url: /assets/documents/CV_Shuyang_Wu.pdf
