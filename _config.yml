@@ -1,5 +1,5 @@
 # =========================================================================
-# 站点核心全局配置 (Site Settings)
+# Site Settings
 # =========================================================================
 locale                   : "en-US"
 title                    : "Shuyang Wu"
@@ -12,7 +12,7 @@ baseurl                  : ""
 repository               : "ShuyangWu-AI4S/ShuyangWu-AI4S.github.io"
 
 # =========================================================================
-# 远程主题定义 (Theme Settings) - 严格依赖远程插件，已移除本地 theme 声明
+# Theme Settings
 # =========================================================================
 remote_theme             : "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin    : "contrast" 
@@ -28,7 +28,7 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
-      url: "mailto:your-email@u.nus.edu"
+      url: "mailto:wushuyang@u.nus.edu"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/ShuyangWu-AI4S"
