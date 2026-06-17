@@ -16,7 +16,6 @@ repository               : "ShuyangWu-AI4S/ShuyangWu-AI4S.github.io"
 # Theme Settings
 # =========================================================================
 remote_theme             : "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin    : "contrast" 
 
 # =========================================================================
 # 侧边栏个人资料卡配置 (Site Author Profile)
