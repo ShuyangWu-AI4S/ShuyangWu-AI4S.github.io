@@ -2,70 +2,72 @@
 
 <style>
   /* =========================================================================
-     1. 头像终极解法：智能裁剪 + 响应式缩放
+     1. 彻底干掉“颜色变淡”：增加最高权重选择器，碾压 Contrast 皮肤底层源码
      ========================================================================= */
+  .page__sidebar .author__avatar img,
+  .page__sidebar .author__avatar a img,
   .author__avatar img {
-    width: 145px !important;         /* 电脑端尺寸 */
-    height: 145px !important;        /* 强制宽高一致 */
-    max-width: 100% !important;      
-    object-fit: cover !important;    /* ⚡ 核心魔法：如果原图是长方形，智能居中裁剪成正方形，绝不拉伸变形！ */
-    border-radius: 50% !important;   /* 裁剪后切成正圆 */
+    opacity: 1 !important;       /* ⚡ 强制 100% 实体显色，绝对不再变淡！ */
+    filter: none !important;
+    transition: none !important; /* 拔掉鼠标悬停时的渐变恢复动画 */
   }
-  
-  /* 当网页缩小到平板或手机尺寸时，头像自动优雅缩小，防止被侧边栏挤压变形 */
+
+  /* =========================================================================
+     2. 彻底干掉“竖椭圆”：用动态比例锁代替死锁高度
+     ========================================================================= */
+  .author__avatar {
+    display: block !important;
+    width: 145px !important;
+    max-width: 100% !important;
+    margin: 0 auto 10px auto !important;
+  }
+
+  .author__avatar img {
+    width: 100% !important;          /* 宽度占满父容器 */
+    height: auto !important;         /* ⚡ 高度自动跟随 */
+    aspect-ratio: 1 / 1 !important;  /* ⚡ 核心锁：无论怎么被挤压，高宽比永远死锁为 1:1 正方形 */
+    object-fit: cover !important;    /* 将长方形照片完美居中裁剪在正方形里 */
+    border-radius: 50% !important;   /* 切成正圆 */
+  }
+
+  /* 移动端缩小网页时的自适应，保持完美的圆形 */
   @media (max-width: 1024px) {
-    .author__avatar img {
-      width: 100px !important;
-      height: 100px !important;
+    .author__avatar {
+      width: 90px !important;
+      float: left !important;
+      margin-right: 20px !important;
     }
   }
 
   /* =========================================================================
-     2. 斩草除根：杀掉 Contrast 皮肤自带的电脑端黑白/虚化滤镜
+     3. 终极靶向放大 NUS Logo
      ========================================================================= */
-  .author__avatar img, 
-  .author__avatar a img, 
-  .author__avatar:hover img, 
-  .sidebar .author__avatar img {
-    opacity: 1 !important;
-    filter: grayscale(0%) !important;          /* 强行把灰度降为 0 */
-    -webkit-filter: grayscale(0%) !important; 
-    filter: none !important;                   /* 清除所有其他滤镜 */
-    -webkit-filter: none !important;
-    transition: none !important;               /* 拔掉所有渐变动画 */
+  .masthead { 
+    padding: 15px 0 !important; 
   }
-
-  /* =========================================================================
-     3. 释放顶栏，让 NUS Logo 自然舒展
-     ========================================================================= */
-  .masthead {
-    padding: 1.2em 0 !important;     /* 撑开顶栏上下空间 */
-  }
+  
+  .masthead__logo a img, 
   .masthead__logo img {
-    max-height: 55px !important;     /* 突破默认的 30px 限制，放大到 55px */
-    height: auto !important;
+    height: 65px !important;         /* ⚡ 直接强行拉高到 65px */
+    max-height: 65px !important;     /* 撕碎原主题的最高限制 */
     width: auto !important;
   }
 
   /* =========================================================================
-     4. 全站纯净学术排版与去除标题小方块
+     4. 全站纯净学术排版与去除标题右侧跳转小方块
      ========================================================================= */
-  /* 隐藏标题右侧的跳转小尾巴 */
   .header-link, .header-link i { display: none !important; }
   
-  /* 基础字体 */
   body, p, h1, h2, h3, h4, h5, h6, li, a, span {
     font-family: "Open Sans", "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   }
   
-  /* 正文与列表间距 */
   .page__content p, .page__content li { 
     line-height: 1.8 !important; 
     font-size: 15.5px !important; 
     color: #2c2c2c !important; 
   }
   
-  /* 标题优雅化 */
   .page__content h1, .page__content h2, .page__content h3, .page__content h4 { 
     color: #111111 !important; 
     font-weight: 600 !important; 
@@ -73,12 +75,10 @@
     margin-bottom: 0.6em !important;
   }
   
-  /* 标题下划线 */
   .page__content h2 { 
     border-bottom: 1px solid #e1e4e8 !important; 
     padding-bottom: 0.3em !important; 
   }
   
-  /* 锁死全局根字号 */
   html { font-size: 16px !important; }
 </style>
