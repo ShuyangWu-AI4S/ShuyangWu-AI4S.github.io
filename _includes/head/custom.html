@@ -2,48 +2,61 @@
 
 <style>
   /* =========================================================================
-     2. 全站字体大洗牌：强制应用 Open Sans / Lato，彻底清除方正生硬感
+     2. 精准字体策略：只覆盖文本和标题，绝不加 !important，把图标生存空间还给 FontAwesome
      ========================================================================= */
-  *, *::before, *::after {
-    font-family: "Open Sans", "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    color: #2c2c2c !important; /* 优雅深灰，告别死黑 */
+  body, p, h1, h2, h3, h4, h5, h6, li, a, span {
+    font-family: "Open Sans", "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   }
 
   /* =========================================================================
-     3. 规范正文排版（字间距、高信息密度）
+     3. 彻底封杀标题右侧的奇怪跳转小方块（Header Anchor Links）
      ========================================================================= */
-  p, li {
-    line-height: 1.75 !important;
+  .header-link, .header-link i {
+    display: none !important;
+  }
+
+  /* =========================================================================
+     4. 头像暴力放大 + 彻底去虚化锁死
+     ========================================================================= */
+  .author__avatar {
+    width: 165px !important;       /* ⚡ 从默认的窄小尺寸暴力放大到 165px，更显大气 */
+    height: 165px !important;
+    max-width: 100% !important;
+    opacity: 1 !important;
+    margin-left: auto !important;  /* 居中对齐 */
+    margin-right: auto !important;
+  }
+  .author__avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;  /* 防止放大后头像拉伸变形 */
+    opacity: 1 !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    transition: none !important;   /* 拔掉悬停闪烁动画 */
+  }
+
+  /* =========================================================================
+     5. 正文精细学术排版（深炭灰、拉开行距、注入呼吸感）
+     ========================================================================= */
+  .page__content p, .page__content li {
+    line-height: 1.8 !important;    /* 舒展行高，字不再挤 */
     font-size: 15.5px !important;
-    letter-spacing: 0.01em !important; /* 微调字距，更具呼吸感 */
+    color: #2c2c2c !important;     /* 优雅深炭灰，告别死黑 */
+    letter-spacing: 0.01em !important;
   }
 
-  /* =========================================================================
-     4. 标题优雅化（600半粗体，圆润修长，自带淡灰色学术分割线）
-     ========================================================================= */
-  h1, h2, h3, h4 {
+  .page__content h1, .page__content h2, .page__content h3, .page__content h4 {
     color: #111111 !important;
-    font-weight: 600 !important; /* 锁死600字重，饱满而不臃肿 */
+    font-weight: 600 !important;   /* 采用 600 半粗体，圆润修长 */
     margin-top: 1.8em !important;
     margin-bottom: 0.6em !important;
   }
 
-  h2 {
-    border-bottom: 1px solid #e1e4e8 !important; /* 复刻大牛同款标题下划线 */
+  /* 在正文大标题（如 About Me / Research Directions）下方画一条优雅的淡灰学术分割线 */
+  .page__content h2 {
+    border-bottom: 1px solid #e1e4e8 !important;
     padding-bottom: 0.3em !important;
-  }
-
-  /* =========================================================================
-     5. 彻底解决头像虚化、闪烁问题（全状态 100% 不透明锁死）
-     ========================================================================= */
-  .author__avatar, 
-  .author__avatar img, 
-  .author__avatar:hover img,
-  .sidebar .author__avatar img {
-    opacity: 1 !important;
-    filter: none !important;
-    -webkit-filter: none !important;
-    transition: none !important; /* 拔掉所有鼠标悬停变亮的动画 */
   }
 
   /* =========================================================================
