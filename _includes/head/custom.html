@@ -56,29 +56,30 @@
     color: #000000 !important; 
   }
 
-  /* =========================================================================
-     4. 🎯 精准爆破源码：强拆导航栏 (greedy-nav) 的 1.5rem 高度限制
+ /* =========================================================================
+     4. 🎯 精准爆破源码：用“视觉放大”代替“物理撑开”
      ========================================================================= */
   .masthead {
-    padding: 15px 0 !important;
+    padding: 5px 0 !important;      /* ⚡ 把之前撑开的上下空间收回来，让框架变窄变精致 */
   }
-  /* 解开导航栏母盒子的弹性束缚 */
   .greedy-nav {
-    min-height: 80px !important;
+    min-height: 60px !important;    /* 降低物理框架的高度 */
   }
   
-  /* 动用最高权重，直接覆盖源码里对 img 的死锁 */
   html body .masthead .greedy-nav .site-logo img,
   html body .masthead .greedy-nav a img,
   html body .masthead .greedy-nav img {
-    height: 105px !important;        /* ⚡ 直接强行拔高到 75 像素 */
-    min-height: 105px !important;
-    max-height: none !important;    /* 彻底撕毁源码的 1.5rem 封条 */
+    height: 55px !important;        /* 物理高度回调到55，不再强行撑大外层框架！ */
+    min-height: 55px !important;
+    max-height: none !important;
     width: auto !important;
     max-width: none !important;
     display: inline-block !important;
-  }
 
+    /* ⚡ 核心魔法：使用“视觉放大”，只放大图像，绝对不撑大物理框架！ */
+    transform: scale(1.7) !important;         /* 直接放大 1.7 倍（你可以在 1.5 到 2.0 之间随便调，框架绝不会变大） */
+    transform-origin: left center !important; /* 锁定左边向右放大，防止放大后超出左侧屏幕 */
+  }
   /* =========================================================================
      5. 全站纯净学术排版与去标题小方块
      ========================================================================= */
