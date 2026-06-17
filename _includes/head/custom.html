@@ -2,21 +2,15 @@
 
 <style>
   /* =========================================================================
-     1. 击碎万恶之源：直接把左侧母盒子的半透明属性彻底格式化！
+     1. 击碎母盒子半透明陷阱（头像与左侧彻底不再虚化）
      ========================================================================= */
-  .sidebar, 
-  .sidebar:hover,
-  .page__sidebar,
-  .page__sidebar:hover,
-  .author__profile,
-  .author__profile:hover {
+  .sidebar, .sidebar:hover, .page__sidebar, .page__sidebar:hover,
+  .author__profile, .author__profile:hover {
     opacity: 1 !important;
     filter: none !important;
     -webkit-filter: none !important;
     transition: none !important;
   }
-
-  /* 彻底干掉可能残余的内部头像滤镜 */
   .author__avatar img {
     opacity: 1 !important;
     filter: none !important;
@@ -25,7 +19,7 @@
   }
 
   /* =========================================================================
-     2. 锁定头像完美正圆（不变形）
+     2. 锁定头像完美正圆
      ========================================================================= */
   .author__avatar {
     display: block !important;
@@ -52,11 +46,8 @@
   /* =========================================================================
      3. 拯救被 default 皮肤变浅的左侧文字（全部强制改回深实色）
      ========================================================================= */
-  .author__bio, 
-  .author__urls-wrapper a, 
-  .author__urls-wrapper li, 
-  .author__name,
-  .author__location {
+  .author__bio, .author__urls-wrapper a, .author__urls-wrapper li, 
+  .author__name, .author__location {
     color: #2c2c2c !important;
     opacity: 1 !important;
     font-weight: 500 !important;
@@ -66,16 +57,23 @@
   }
 
   /* =========================================================================
-     4. 暴力放大 NUS Logo（盲打结构，彻底无视官方的类名变动）
+     4. 🎯 精准爆破源码：强拆导航栏 (greedy-nav) 的 1.5rem 高度限制
      ========================================================================= */
   .masthead {
     padding: 15px 0 !important;
   }
-  .masthead__title img,
-  .site-logo img,
-  .site-logo {
-    height: 80px !important;
-    max-height: none !important;
+  /* 解开导航栏母盒子的弹性束缚 */
+  .greedy-nav {
+    min-height: 80px !important;
+  }
+  
+  /* 动用最高权重，直接覆盖源码里对 img 的死锁 */
+  html body .masthead .greedy-nav .site-logo img,
+  html body .masthead .greedy-nav a img,
+  html body .masthead .greedy-nav img {
+    height: 75px !important;        /* ⚡ 直接强行拔高到 75 像素 */
+    min-height: 75px !important;
+    max-height: none !important;    /* 彻底撕毁源码的 1.5rem 封条 */
     width: auto !important;
     max-width: none !important;
     display: inline-block !important;
