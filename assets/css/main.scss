@@ -1,0 +1,27 @@
+---
+# 必须保留这三根横线，这是唤醒 Jekyll 编译器的底层暗号
+---
+
+@charset "utf-8";
+
+/* 1. 强制拉取官方的核心源码包（保证网站框架不塌） */
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+
+/* =========================================================================
+   2. 你的绝对统治级源码覆盖（以下代码将物理抹除官方的设定）
+   ========================================================================= */
+
+/* 彻底摧毁 Contrast 皮肤底层的黑白虚化滤镜，连根拔起！ */
+.author__avatar img {
+  filter: grayscale(0%) !important;
+  -webkit-filter: grayscale(0%) !important;
+  opacity: 1 !important;
+}
+
+/* 解放 NUS Logo！像素大小由你绝对掌控！ */
+.masthead__logo img {
+  height: 95px !important;       /* ⚡ 我这里给到了极具攻击性的 95px！如果你还嫌小，直接把这里改成 120px 甚至 150px！ */
+  max-height: none !important;   /* 暴力撕碎原主题的最高限制封条 */
+}
