@@ -1,5 +1,27 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap">
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap">
+  html body .page__sidebar .author__avatar,
+  html body .page__sidebar .author__avatar a,
+  html body .page__sidebar .author__avatar img,
+  html body .sidebar .author__avatar,
+  html body .sidebar .author__avatar a,
+  html body .sidebar .author__avatar img {
+    opacity: 1 !important;
+    filter: grayscale(0%) !important;
+    -webkit-filter: grayscale(0%) !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    mix-blend-mode: normal !important;
+  }
+  
+  /* 斩断主题可能生成的一切伪元素蒙版干扰 */
+  html body .page__sidebar .author__avatar::before,
+  html body .page__sidebar .author__avatar::after,
+  html body .page__sidebar .author__avatar a::before,
+  html body .page__sidebar .author__avatar a::after {
+    display: none !important;
+    opacity: 0 !important;
+  }
 <style>
   /* =========================================================================
      1. 彻底干掉“颜色变淡”：增加最高权重选择器，碾压 Contrast 皮肤底层源码
@@ -46,9 +68,9 @@
     padding: 15px 0 !important;      /* 暴力撑开顶栏高度空间 */
   }
   .masthead__logo img {
-    height: 95px !important;         /* ⚡ 进攻型指令：强行拔高到 58px */
-    min-height: 95px !important;     /* 双重锁死，防止缩小 */
-    max-height: none !important;     /* 撕掉主题的高度限制封条 */
+    height: 65px !important;         /* ⚡ 进攻型指令：强行拔高到 58px */
+    max-height: 65px !important;     /* 双重锁死，防止缩小 */
+    mix-height: none !important;     /* 撕掉主题的高度限制封条 */
     width: auto !important;
     max-width: none !important;
     object-fit: contain !important;  /* 保证强行拉大后不变形 */
