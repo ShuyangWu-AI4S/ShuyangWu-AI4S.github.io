@@ -1,30 +1,30 @@
 # =========================================================================
 # 站点核心全局配置 (Site Settings)
 # =========================================================================
-locale                   : "zh-CN"
+locale                   : "en-US"
 title                    : "Shuyang Wu"
 title_separator          : "-"
 subtitle                 : "PhD Student at NUS"
 name                     : "Shuyang Wu"
-description              : "Academic homepage of Shuyang Wu. Focusing on AI4S and Distributed Acoustic Sensing."
-url                      : "https://<您的GitHub用户名>.github.io" # 替换为您的实际域名
+description              : "Academic homepage of Shuyang Wu. Trying to build the world with Tech!"
+url                      : "https://ShuyangWu-AI4S.github.io" 
 baseurl                  : ""
-repository               : "<您的GitHub用户名>/<您的GitHub用户名>.github.io"
+repository               : "ShuyangWu-AI4S/ShuyangWu-AI4S.github.io"
 
 # =========================================================================
 # 远程主题定义 (Theme Settings)
 # =========================================================================
 theme                    : "minimal-mistakes-jekyll"
 remote_theme             : "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin    : "contrast" # 推荐学术风皮肤：contrast（高对比白底黑字）或 default
+minimal_mistakes_skin    : "contrast" 
 
 # =========================================================================
 # 侧边栏个人资料卡配置 (Site Author Profile)
 # =========================================================================
 author:
   name             : "Shuyang Wu"
-  avatar           : "/assets/images/avatar.jpg" # 稍后上传的个人头像路径
-  bio              : "PhD Student at National University of Singapore. Research interests: AI for Science (AI4S), Distributed Acoustic Sensing (DAS), and Fluid Dynamics."
+  avatar           : "/assets/images/avatar.jpg" 
+  bio              : "PhD Student at National University of Singapore. Research interests: AI for Science (AI4S), Physics-Informed Operator Learning, Spatiotemporal Representative Learning, Inverse Problems & Digital Twin, Distributed Optical Fiber Sensing(DOFS) ."
   location         : "Singapore"
   links:
     - label: "Email"
@@ -32,7 +32,7 @@ author:
       url: "mailto:your-email@u.nus.edu"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/<您的GitHub用户名>"
+      url: "https://github.com/ShuyangWu-AI4S"
 
 # =========================================================================
 # 默认渲染控制 (Defaults for Markdown Parsing)
@@ -43,7 +43,7 @@ defaults:
       type: "pages"
     values:
       layout: "single"
-      author_profile: true # 默认全量页面左侧强制挂载个人资料卡
+      author_profile: true 
   - scope:
       path: ""
       type: "posts"
