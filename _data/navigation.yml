@@ -4,8 +4,8 @@ main:
   - title: "About me"
     url: /#about-me
   - title: "Research Directions"
-    url: /#research-directions/
+    url: /#research-directions
   # - title: "Publications"
-  #   url: #/publications/
+  #   url: #/publications
   # - title: "CV"
   #   url: /assets/documents/CV_Shuyang_Wu.pdf
