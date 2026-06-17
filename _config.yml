@@ -2,7 +2,9 @@
 # Site Settings
 # =========================================================================
 locale                   : "en-US"
-title                    : "National University of Singapore"
+title                    : "Shuyang Wu"
+logo                     : "/assets/images/nus-hlogo-color.png"
+masthead_title           : " "
 title_separator          : "-"
 name                     : "Shuyang Wu"
 description              : "Academic homepage of Shuyang Wu."
