@@ -2,29 +2,30 @@
 
 <style>
   /* =========================================================================
-     1. 头像终极去虚化（靶向摧毁外层 <a> 超链接相框的蒙版特效）
+     1. 击碎万恶之源：直接把左侧母盒子的半透明属性彻底格式化！
      ========================================================================= */
-  .author__avatar,
-  .author__avatar a,
-  .author__avatar img,
-  .author__avatar .u-photo {
+  .sidebar, 
+  .sidebar:hover,
+  .page__sidebar,
+  .page__sidebar:hover,
+  .author__profile,
+  .author__profile:hover {
     opacity: 1 !important;
     filter: none !important;
     -webkit-filter: none !important;
-    transition: none !important;     /* 彻底拔掉渐变动画 */
+    transition: none !important;
   }
-  
-  /* 强制剥夺鼠标悬停时的任何滤镜变化 */
-  .author__avatar:hover,
-  .author__avatar a:hover,
-  .author__avatar a:hover img {
+
+  /* 彻底干掉可能残余的内部头像滤镜 */
+  .author__avatar img {
     opacity: 1 !important;
     filter: none !important;
     -webkit-filter: none !important;
+    transition: none !important;
   }
 
   /* =========================================================================
-     2. 锁定头像完美正圆
+     2. 锁定头像完美正圆（不变形）
      ========================================================================= */
   .author__avatar {
     display: block !important;
@@ -40,7 +41,6 @@
     border-radius: 50% !important;
     display: block !important;
   }
-  /* 移动端缩小保护 */
   @media (max-width: 1024px) {
     .author__avatar {
       width: 90px !important;
@@ -50,20 +50,39 @@
   }
 
   /* =========================================================================
-     3. 释放 NUS Logo（修正暗号：去掉 img，直接对准 .site-logo 强行拉大！）
+     3. 拯救被 default 皮肤变浅的左侧文字（全部强制改回深实色）
      ========================================================================= */
-  .masthead {
-    padding: 15px 0 !important;      /* 保持撑开的上下空间 */
+  .author__bio, 
+  .author__urls-wrapper a, 
+  .author__urls-wrapper li, 
+  .author__name,
+  .author__location {
+    color: #2c2c2c !important;
+    opacity: 1 !important;
+    font-weight: 500 !important;
   }
-  .site-logo {
-    height: 75px !important;         /* ⚡ 精准命中本尊！直接拉高到 75px，绝对变大！ */
-    max-height: none !important;
-    width: auto !important;
-    max-width: none !important;
+  .author__urls-wrapper a:hover {
+    color: #000000 !important; 
   }
 
   /* =========================================================================
-     4. 全站纯净学术排版与去小方块
+     4. 暴力放大 NUS Logo（盲打结构，彻底无视官方的类名变动）
+     ========================================================================= */
+  .masthead {
+    padding: 15px 0 !important;
+  }
+  .masthead__title img,
+  .site-logo img,
+  .site-logo {
+    height: 80px !important;
+    max-height: none !important;
+    width: auto !important;
+    max-width: none !important;
+    display: inline-block !important;
+  }
+
+  /* =========================================================================
+     5. 全站纯净学术排版与去标题小方块
      ========================================================================= */
   .header-link, .header-link i { display: none !important; }
   
