@@ -1,33 +1,67 @@
 <style>
   /* =========================================================================
-     1. 克隆现代学术字体 Stack（消除发虚、过粗的异形字体）
+     1. 全量大洗牌（*）：强制全站所有元素使用高质感学术字体、告别死黑字色
      ========================================================================= */
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji" !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  *, *::before, *::after {
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
+    color: #2c2c2c !important; /* ⚡ 灵魂微调：改成深炭灰，视觉质感瞬间变高级、变柔和 */
   }
 
   /* =========================================================================
-     2. 彻底抹去头像半透明度（强行保持 100% 常态不透明度）
+     2. 彻底解决“字挤在一起”：规范正文行高与呼吸感
      ========================================================================= */
-  .author__avatar, .author__avatar img {
+  p, li {
+    line-height: 1.75 !important;   /* 增大行间距，给眼睛留出阅读在途的呼吸空间 */
+    font-size: 15.5px !important;   /* 规范正文字号，非常克制 */
+    letter-spacing: 0.01em !important; /* 微调字间距 */
+  }
+
+  /* =========================================================================
+     3. 标题高雅化：克隆你同学那种优雅、不臃肿的标题流
+     ========================================================================= */
+  h1, h2, h3, h4 {
+    color: #111111 !important;     /* 标题颜色比正文稍深 */
+    font-weight: 600 !important;    /* ⚡ 核心：放弃大粗体，改用 600 半粗体，字形立马变骨感修长 */
+    margin-top: 1.8em !important;   /* 给标题上方留出充足的空白 */
+    margin-bottom: 0.6em !important;
+  }
+
+  /* 在每个 h2 大标题（如 About Me / Research）下方画一条淡淡的学术分割线，完全复刻你同学的排版 */
+  h2 {
+    border-bottom: 1px solid #e1e4e8 !important;
+    padding-bottom: 0.3em !important;
+  }
+
+  /* =========================================================================
+     4. 彻底解决头像虚化、闪烁问题（全状态不透明锁死）
+     ========================================================================= */
+  .author__avatar, 
+  .author__avatar img, 
+  .author__avatar:hover img,
+  .sidebar .author__avatar img {
     opacity: 1 !important;
-    filter: none !important; /* 防止某些皮肤自带的灰度或暗化滤镜 */
+    filter: none !important;
+    -webkit-filter: none !important;
+    transition: none !important; /* 拔掉所有鼠标悬停变亮的动画 */
   }
 
   /* =========================================================================
-     3. 放大左上角 NUS 学校 Logo 尺寸
+     5. 拯救横向长条状 NUS Logo，使其自然放大、不再缩成一团
      ========================================================================= */
   .masthead__logo img {
-    max-height: 52px !important; /* 放大到 52px 更加舒展大气 */
+    max-height: 65px !important;   /* 高度松绑到 65px，横向长 Logo 会等比例舒展变大 */
+    height: auto !important;
     width: auto !important;
+  }
+  .masthead__logo {
+    padding-top: 6px !important;    /* 微调顶栏上下边距，防止大 Logo 顶格 */
+    padding-bottom: 6px !important;
   }
 
   /* =========================================================================
-     4. 刚性锁死全局字号（解决全屏时字号无限膨胀变丑的问题）
+     6. 锁死全局根字号防线
      ========================================================================= */
   html {
-    font-size: 15.5px !important; /* 锁死根字号，确保无论大屏小屏排版都精致紧凑 */
+    font-size: 16px !important;     /* 焊死根字号，大屏下不膨胀，小屏下不缩水 */
   }
 </style>
