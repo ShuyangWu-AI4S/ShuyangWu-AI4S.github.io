@@ -2,15 +2,25 @@
 
 <style>
   /* =========================================================================
-     1. 头像去虚化（这次代码在 style 标签内，绝对 100% 显色！）
+     1. 头像终极去虚化（靶向摧毁外层 <a> 超链接相框的蒙版特效）
      ========================================================================= */
+  .author__avatar,
+  .author__avatar a,
   .author__avatar img,
-  .page__sidebar .author__avatar img,
-  .sidebar .author__avatar img {
+  .author__avatar .u-photo {
     opacity: 1 !important;
-    filter: grayscale(0%) !important;
-    -webkit-filter: grayscale(0%) !important;
-    transition: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    transition: none !important;     /* 彻底拔掉渐变动画 */
+  }
+  
+  /* 强制剥夺鼠标悬停时的任何滤镜变化 */
+  .author__avatar:hover,
+  .author__avatar a:hover,
+  .author__avatar a:hover img {
+    opacity: 1 !important;
+    filter: none !important;
+    -webkit-filter: none !important;
   }
 
   /* =========================================================================
@@ -28,8 +38,9 @@
     aspect-ratio: 1 / 1 !important;
     object-fit: cover !important;
     border-radius: 50% !important;
+    display: block !important;
   }
-  /* 移动端保护 */
+  /* 移动端缩小保护 */
   @media (max-width: 1024px) {
     .author__avatar {
       width: 90px !important;
@@ -39,13 +50,13 @@
   }
 
   /* =========================================================================
-     3. 释放 NUS Logo（换成了官方真实的底层暗号 .site-logo）
+     3. 释放 NUS Logo（修正暗号：去掉 img，直接对准 .site-logo 强行拉大！）
      ========================================================================= */
   .masthead {
-    padding: 15px 0 !important;
+    padding: 15px 0 !important;      /* 保持撑开的上下空间 */
   }
-  .site-logo img {
-    height: 70px !important;       /* ⚡ 这里直接给到 70px 物理高度，绝对够大！ */
+  .site-logo {
+    height: 75px !important;         /* ⚡ 精准命中本尊！直接拉高到 75px，绝对变大！ */
     max-height: none !important;
     width: auto !important;
     max-width: none !important;
